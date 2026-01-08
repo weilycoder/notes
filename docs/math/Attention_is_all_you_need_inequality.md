@@ -1,0 +1,452 @@
+???+ note "记号说明"
+
+    + 使用大写字母，如 $P,Q$ 等表示的函数，在没有特殊说明的情况下，系有理系数多项式函数；
+    + 使用大写字母，如 $A,B$ 等表示的参数或变量，在没有特殊说明的情况下，系有理数；$C$ 出现在不定积分结果时除外；
+    + 使用 $m,n$ 表示的参数或变量，在没有特殊说明的情况下，系正整数；
+    + 使用 $p,q$ 表示的参数或变量，在没有特殊说明的情况下，系有理数；特别地，$\dfrac{p}{q}$ 没有特殊说明的情形为既约分数。
+
+## Pi
+
+众所周知：
+
+$$
+\dfrac{\mathrm{d}\left(\arctan x\right)}{\mathrm{d}x}=\dfrac{1}{1+x^2}
+$$
+
+因此
+
+$$
+\int_{0}^{1}\dfrac{1}{1+x^2}\mathrm{d}x=\dfrac{\pi}{4}
+$$
+
+而 $\dfrac{x}{1+x^2}$ 的积分可以利用换元得到，这里令 $u=1+x^2$。
+
+$$
+\begin{aligned}
+  \int_{0}^{1}\dfrac{x}{1+x^2}\mathrm{d}x
+  &= \int_{1}^{2}\dfrac{x}{u}\cdot\dfrac{\mathrm{d}u}{2x} \\
+  &= \dfrac{1}{2}\int_{1}^{2}\dfrac{1}{u}\mathrm{d}u \\
+  &= \dfrac{\ln{2}}{2}
+\end{aligned}
+$$
+
+因此，$\dfrac{P\left(x\right)}{1+x^2}$ 在 $[0,1]$ 上的积分结果是 $1,\ln{2},\pi$ 的线性组合，即
+
+$$
+\int_{0}^{1}\dfrac{P\left(x\right)}{1+x^2}\mathrm{d}x=A+B\ln{2}+C\pi
+$$
+
+如果我们可以构造 $P\left(x\right)$ 使得其在 $[0,1]$ 恒非负，即可证明（一般不能取等）：
+
+$$
+A+B\ln{2}+C\pi\geqslant 0
+$$
+
+一般来说，要求证明的不等式是比较紧的，因此积分结果不能太大，为了实现这一点，通常使用 $x^{n}\left(1-x\right)^{m}$ 作为 $P\left(x\right)$ 的因式。
+
+又因为积分结果中有 $3$ 个参数需要控制，可以取
+
+$$
+P\left(x\right)=x^{n}\left(1-x\right)^{m}\left(a+bx+cx^2\right)
+$$
+
+这样，我们可以从小到大遍历 $n,m$，并通过控制 $a,b,c$ 的取值调整结果中 $A,B,C$ 的取值，后者可以通过解一个 $3$ 元线性方程组来实现。
+
+假如解得 $a,b,c$ 满足函数 $a+bx+cx^2$ 在 $[0,1]$ 上恒非负，则积分构造成功。
+
+$$
+\boxed{
+  \int_{0}^{1}\dfrac{x^{n}\left(1-x\right)^{m}\left(a+bx+cx^2\right)}{1+x^{2}}\mathrm{d}x = A+B\ln{2}+C\pi
+}
+$$
+
+其中
+
+$$
+\boxed{
+  \begin{aligned}
+    \int_{0}^{1}x^{n}\mathrm{d}x &= \dfrac{1}{n+1} \\
+    \int_{0}^{1}\dfrac{x}{1+x^{2}}\mathrm{d}x &= \dfrac{\ln\left(2\right)}{2} \\
+    \int_{0}^{1}\dfrac{1}{1+x^{2}}\mathrm{d}x &= \dfrac{\pi}{4}
+  \end{aligned}
+}
+$$
+
+## E
+
+考虑积分
+
+$$
+\begin{aligned}
+  \int x^{n}\mathrm{e}^{x}\mathrm{d}x
+  &= \int x^{n}\mathrm{d}\left(\mathrm{e}^{x}\right) \\
+  &= x^{n}\mathrm{e}^{x} - \int \mathrm{e}^{x}\mathrm{d}\left(x^{n}\right) \\
+  &= x^{n}\mathrm{e}^{x} - \int \mathrm{e}^{x}\cdot n\cdot x^{n-1}\mathrm{d}x \\
+  &= x^{n}\mathrm{e}^{x} - n \cdot \int \mathrm{e}^{x}\cdot x^{n-1}\mathrm{d}x \\
+  &= \cdots \\
+  &= \mathrm{e}^{x}\sum_{k=0}^{n}\left(-1\right)^{n-k}\dfrac{n!}{k!}x^{k}+C \\
+  &= \mathrm{e}^{x}Q_{n}\left(x\right)+C
+\end{aligned}
+$$
+
+同理，有
+
+$$
+\int P\left(x\right)\mathrm{e}^{x}\mathrm{d}x=P^{\ast}\left(x\right)\mathrm{e}^{x}+C
+$$
+
+不难得到
+
+$$
+\boxed{
+  \int_{0}^{1}x^{n}\left(1-x\right)^{m}\left(a+bx\right)\mathrm{e}^{x}\mathrm{d}x=A+B\mathrm{e}
+}
+$$
+
+*利用 $n,m$ 控制精度，$a,b$ 控制参数。*
+
+其中
+
+$$
+\boxed{
+  \begin{aligned}
+    \int_{0}^{1}x^{n}\mathrm{e}^{x}\mathrm{d}x &= \left(-1\right)^{n+1}\cdot n! + \mathrm{A182386}\left(n\right)\cdot\mathrm{e} \\
+  \end{aligned}
+}
+$$
+
+这里 [$\mathrm{A182386}\left(n\right)$](https://oeis.org/A182386) 满足递推：
+
+$$
+\boxed{
+  \begin{aligned}
+    \mathrm{A182386}\left(0\right) &= 1 \\
+    \mathrm{A182386}\left(n\right) &= 1 - n\cdot \mathrm{A182386}\left(n - 1\right)
+  \end{aligned}
+}
+$$
+
+## Pi^n
+
+先对积分的几个部分分别作出证明。
+
+### Part 1
+
+$$
+\begin{aligned}
+  \int_{0}^{1} x^{m}\left(\ln x\right)^{n}\mathrm{d}x
+  &= \int_{\infty}^{0}\left(\mathrm{e}^{-t}\right)^{m}\cdot\left(-t\right)^{n}\cdot\dfrac{\mathrm{d}x}{\mathrm{d}t}\cdot\mathrm{d}t \\
+  &= \int_{\infty}^{0}\left(\mathrm{e}^{-t}\right)^{m}\cdot\left(-t\right)^{n}\cdot\left(-\mathrm{e}^{t}\right)\cdot\mathrm{d}t \\
+  &= \left(-1\right)^{n}\cdot\int_{0}^{\infty}t^{n}\mathrm{e}^{-\left(m+1\right)t}\mathrm{d}t \\
+  &= \left(-1\right)^{n}\cdot\int_{0}^{\infty}\left(\dfrac{u}{m+1}\right)^{n}\cdot\mathrm{e}^{-u}\cdot\dfrac{\mathrm{d}t}{\mathrm{d}u}\cdot\mathrm{d}u \\
+  &= \dfrac{\left(-1\right)^{n}}{\left(m+1\right)^{n+1}}\cdot\int_{0}^{\infty}u^{n}\cdot\mathrm{e}^{-u}\cdot\mathrm{d}u \\
+  &= \dfrac{\left(-1\right)^{n}}{\left(m+1\right)^{n+1}}\cdot\Gamma\left(n+1\right) \\
+  &= \dfrac{\left(-1\right)^{n}\cdot n!}{\left(m+1\right)^{n+1}}
+\end{aligned}
+$$
+
+有关 $\Gamma$ 函数的结论见[欧拉第二积分](./gamma-function.md)。
+
+### Part 2
+
+$$
+\begin{aligned}
+  \int_{0}^{1}\dfrac{x\left(\ln x\right)^{n}}{1+x^2}\mathrm{d}x
+  &= \int_{0}^{1}x\left(\ln x\right)^{n}\left(\sum_{k=0}^{\infty}\left(-1\right)^{k}x^{2k}\right)\mathrm{d}x \\
+  &= \sum_{k=0}^{\infty}\left(-1\right)^{k}\cdot\int_{0}^{1}x^{2k+1}\left(\ln{x}\right)^{n}\mathrm{d}x \\
+  &= \sum_{k=0}^{\infty}\left(-1\right)^{k}\cdot\dfrac{\left(-1\right)^{n}\cdot n!}{\left(2k+2\right)^{n+1}} \\
+  &= \dfrac{\left(-1\right)^{n}\cdot n!}{2^{n+1}}\cdot\sum_{k=1}^{\infty}\dfrac{\left(-1\right)^{k-1}}{k^{n+1}} \\
+  &= \dfrac{\left(-1\right)^{n}\cdot n!}{2^{n+1}}\cdot\eta\left(n+1\right)
+\end{aligned}
+$$
+
+$2k$ 为正偶数时，有
+
+$$
+\zeta\left(2k\right)=-\dfrac{B_{2k}\cdot\left(2\pi i\right)^{2k}}{2\cdot\left(2k\right)!}
+$$
+
+因此
+
+$$
+\eta\left(2k\right)=\left(1-2^{1-2k}\right)\zeta\left(2k\right)=\dfrac{\left(-1\right)^{k+1}B_{2k}\left(2^{2k-1}-1\right)}{\left(2k\right)!}\pi^{2k}
+$$
+
+*式中 $\eta$ 表示 [Dirichlet eta 函数](https://mathworld.wolfram.com/DirichletEtaFunction.html)，$\zeta$ 表示 [Riemann zeta 函数](https://mathworld.wolfram.com/RiemannZetaFunction.html)，$B_n$ 表示 [伯努利数](https://mathworld.wolfram.com/BernoulliNumber.html)。*
+
+故积分式中 $n$ 为奇数时，积分有较好的结果，且积分结果包含 $\pi^{n+1}$。
+
+上述结果可以参考 [zeta-2k](./zeta_2k.md)。
+
+### Part 3
+
+$$
+\begin{aligned}
+  \int_{0}^{1}\dfrac{\left(\ln x\right)^{n}}{1+x^2}\mathrm{d}x
+  &= \int_{0}^{1}\left(\ln x\right)^{n}\left(\sum_{k=0}^{\infty}\left(-1\right)^{k}x^{2k}\right)\mathrm{d}x \\
+  &= \sum_{k=0}^{\infty}\left(-1\right)^{k}\cdot\int_{0}^{1}x^{2k}\left(\ln x\right)^{n}\mathrm{d}x \\
+  &= \sum_{k=0}^{\infty}\left(-1\right)^{k}\cdot\dfrac{\left(-1\right)^{n}\cdot n!}{\left(2k+1\right)^{n+1}} \\
+  &= \left(-1\right)^{n}\cdot n!\cdot\sum_{k=0}^{\infty}\dfrac{\left(-1\right)^{k}}{\left(2k+1\right)^{n+1}} \\
+  &= \left(-1\right)^{n}\cdot n!\cdot\beta\left(n+1\right)
+\end{aligned}
+$$
+
+若 $n$ 为偶数，记 $n=2k$，则有
+
+$$
+\beta\left(2k+1\right)=\dfrac{\left(-1\right)^{k}E_{2k}\pi^{2k+1}}{4^{k+1}\left(2k\right)!}
+$$
+
+*式中 $\beta$ 表示 [Dirichlet beta 函数](https://mathworld.wolfram.com/DirichletBetaFunction.html)，$E_n$ 表示 [欧拉数](https://mathworld.wolfram.com/EulerNumber.html)。*
+
+此时积分结果较简洁。
+
+### 构造
+
+综合上述 $3$ 个积分，我们考虑如下函数的积分：
+
+$$
+F\left(x\right)=\dfrac{x^{m}\left(a+bx^{2}\right)\left(\ln \dfrac{1}{x}\right)^{n-1}}{1+x^2}
+$$
+
+*式中使用 $\ln \dfrac{1}{x}$ 而非 $\ln x$ 是为了方便讨论正负号，这时只需确保 $a+bx^{2}$ 在 $[0,1]$ 恒非负。*
+
+若 $n$ 为奇数，我们令 $m$ 为偶数，则 $F\left(x\right)$ 做完大除法后形式必然为
+
+$$
+F\left(x\right)=P\left(x\right)\left(\ln x\right)^{n-1}+\dfrac{k\left(\ln x\right)^{n-1}}{1+x^2}
+$$
+
+分别应用 $\text{Part 1}$ 和 $\text{Part 3}$ 的结论即可。
+
+否则，$n$ 为偶数，则令 $m$ 为奇数，$F\left(x\right)$ 做大除法后的形式为
+
+$$
+F\left(x\right)=P\left(x\right)\left(\ln x\right)^{n-1}+\dfrac{kx\left(\ln x\right)^{n-1}}{1+x^2}
+$$
+
+可以分别应用 $\text{Part 1}$ 和 $\text{Part 2}$ 的结论。
+
+总之，我们有
+
+$$
+\boxed{
+  \begin{aligned}
+    \int_{0}^{1}\dfrac{x^{m}\left(a+bx^{2}\right)\left(\ln x^{-1}\right)^{n-1}}{1+x^2}\mathrm{d}x=A+B\pi^{n} \\
+    \left(2\not\mid m+n\right)
+  \end{aligned}
+}
+$$
+
+其中
+
+$$
+\boxed{
+  \begin{aligned}
+    \int_{0}^{1} x^{m}\left(\ln x^{-1}\right)^{n-1}\mathrm{d}x &= \dfrac{\left(n-1\right)!}{\left(m+1\right)^{n}} \\
+    \int_{0}^{1} \dfrac{x\cdot\left(\ln x^{-1}\right)^{n-1}}{1+x^{2}}\mathrm{d}x &= \dfrac{\left(2^{n-1}-1\right)\left(n-1\right)!}{2^{2n-1}}\cdot\zeta\left(n\right) \\
+    \int_{0}^{1} \dfrac{\left(\ln x\right)^{n-1}}{1+x^{2}}\mathrm{d}x &= \left(n-1\right)!\cdot\beta\left(n\right)
+  \end{aligned}
+}
+$$
+
+
+???+ warning "sympy"
+
+    可能由于这部分涉及的函数的不定积分并没有简单的封闭形式，`sympy` 不能处理这些函数的定积分，尽管后者有简洁的形式。
+
+    不过 `sympy` 仍然可以辅助计算，例如，`sympy.zeta` 和 `sympy.dirichlet_eta` 可以计算 $\zeta$ 函数和 $\eta$ 函数。
+
+    另外，$E_n$ 和 $B_n$ 可以使用 `sympy.euler` 和 `sympy.bernoulli` 计算。
+
+
+## E^q
+
+考虑积分
+
+$$
+\begin{aligned}
+  \int x^{n}\mathrm{e}^{qx}\mathrm{d}x
+  &= \int x^{n}\mathrm{d}\left(\dfrac{\mathrm{e}^{qx}}{q}\right) \\
+  &= \dfrac{x^{n}\mathrm{e}^{qx}}{q}-\int\dfrac{\mathrm{e}^{qx}}{q}\mathrm{d}\left(x^{n}\right) \\
+  &= \dfrac{x^{n}\mathrm{e}^{qx}}{q}-\dfrac{n}{q}\cdot\int x^{n-1}\mathrm{e}^{qx}\mathrm{d}x \\
+  &= \cdots \\
+  &= \dfrac{\mathrm{e}^{qx}}{q^{n+1}}\sum_{k=0}^{n}\left(-1\right)^{n-k}\dfrac{n!}{k!}\left(qx\right)^{k} + C \\
+  &= \mathrm{e}^{qx} Q_{q,n}\left(x\right) + C
+\end{aligned}
+$$
+
+因此有
+
+$$
+\boxed{
+  \int_{0}^{1}x^{n}\left(1-x\right)^{m}\left(a+bx\right)\mathrm{e}^{qx}\mathrm{d}x = A + B\mathrm{e}^{q}
+}
+$$
+
+这里
+
+$$
+\boxed{
+  \begin{aligned}
+    \int_{0}^{1}x^{n}\mathrm{e}^{qx}\mathrm{d}x &= \dfrac{n!}{\left(-q\right)^{n+1}} + B\left(n\right)\cdot\mathrm{e}^{q} \\
+    B\left(0\right) &= \dfrac{1}{q} \\
+    B\left(n\right) &= \dfrac{1 - n\cdot B\left(n-1\right)}{q} \\
+  \end{aligned}
+}
+$$
+
+## E^Pi
+
+由于需要使函数的非负性显然，我们考虑 $[0,\pi]$ 上的积分。
+
+令
+
+$$
+I_{n}=\int\sin^{n}\left(x\right)\mathrm{e}^{x}\mathrm{d}x
+$$
+
+则
+
+$$
+\begin{aligned}
+  I_n &= \int\sin^{n}\left(x\right)\mathrm{e}^{x}\mathrm{d}x \\
+  &= \int\sin^{n}\left(x\right)\mathrm{d}\left(\mathrm{e}^{x}\right) \\
+  &= \sin^{n}\left(x\right)\mathrm{e}^{x}-\int\mathrm{e}^{x}\mathrm{d}\left(\sin^{n}\left(x\right)\right) \\
+  &= \sin^{n}\left(x\right)\mathrm{e}^{x}-n\int\mathrm{e}^{x}\sin^{n-1}\left(x\right)\cos\left(x\right)\mathrm{d}x \\
+\end{aligned}
+$$
+
+其中
+
+$$
+\begin{aligned}
+  \int \mathrm{e}^{x}\sin^{n-1}\left(x\right)\cos\left(x\right)\mathrm{d}x
+  &= \int\sin^{n-1}\left(x\right)\cos\left(x\right)\mathrm{d}\left(\mathrm{e}^{x}\right) \\
+  &= \sin^{n-1}\left(x\right)\cos\left(x\right)\mathrm{e}^{x}-\int\mathrm{e}^{x}\mathrm{d}\left(\sin^{n-1}\left(x\right)\cos\left(x\right)\right) \\
+  &= \sin^{n-1}\left(x\right)\cos\left(x\right)\mathrm{e}^{x}-\int\left(-n\sin^{n}\left(x\right)+\left(n-1\right)\sin^{n-2}\left(x\right)\right)\mathrm{e}^{x}\mathrm{d}x \\
+  &= \sin^{n-1}\left(x\right)\cos\left(x\right)\mathrm{e}^{x}+n\int\sin^{n}\left(x\right)\mathrm{e}^{x}\mathrm{d}x-\left(n-1\right)\int\sin^{n-2}\left(x\right)\mathrm{e}^{x}\mathrm{d}x \\
+  &= \sin^{n-1}\left(x\right)\cos\left(x\right)\mathrm{e}^{x}+nI_{n}-\left(n-1\right)I_{n-2}
+\end{aligned}
+$$
+
+故
+
+$$
+\begin{aligned}
+  I_n &= \int \sin^{n}\left(x\right)\mathrm{e}^{x}\mathrm{d}x \\
+  &= \sin^{n}\left(x\right)\mathrm{e}^{x}-n\int\mathrm{e}^{x}\sin^{n-1}\left(x\right)\cos\left(x\right)\mathrm{d}x \\
+  &= \sin^{n}\left(x\right)\mathrm{e}^{x}-n\left(\sin^{n-1}\left(x\right)\cos\left(x\right)\mathrm{e}^{x}+nI_{n}-\left(n-1\right)I_{n-2}\right) \\
+  &= \sin^{n}\left(x\right)\mathrm{e}^{x}-n\sin^{n-1}\left(x\right)\cos\left(x\right)\mathrm{e}^{x}-n^{2}I_{n}+n\left(n-1\right)I_{n-2} \\
+\end{aligned}
+$$
+
+移项得
+
+$$
+\boxed{
+  I_{n} = \dfrac{\mathrm{e}^{x}\left(\sin^{n}\left(x\right)-n\sin^{n-1}\left(x\right)\cos\left(x\right)\right)+n\left(n-1\right)I_{n-2}}{n^{2}+1}
+}
+$$
+
+现在考察递推起点 $I_0$ 和 $I_1$：
+
+$$
+\boxed{
+  \begin{aligned}
+    I_0 &= \int\mathrm{e}^{x}\mathrm{d}x = \mathrm{e}^{x} + C \\
+    I_1 &= \int\sin\left(x\right)\mathrm{e}^{x}\mathrm{d}x = \dfrac{\mathrm{e}^{x}}{2}\left(\sin\left(x\right)-\cos\left(x\right)\right)+C
+  \end{aligned}
+}
+$$
+
+若令以上积分的下界为 $0$，上界为 $\pi$，则
+
+$$
+\boxed{
+  \begin{aligned}
+    I_{0} &= -1+\mathrm{e}^{\pi} \\
+    I_{1} &= \dfrac{1}{2}+\dfrac{\mathrm{e}^{\pi}}{2} \\
+    I_{n} &= \dfrac{n\left(n-1\right)}{n^{2}+1}\cdot I_{n-2} \\
+  \end{aligned} \quad
+  \left(I_{n} := \int_{0}^{\pi}\sin^{n}\left(x\right)\mathrm{e}^{x}\mathrm{d}x\right)
+}
+$$
+
+因此有
+
+$$
+\boxed{
+  \int_{0}^{\pi}\sin^{n}\left(x\right)\left(1-\sin\left(x\right)\right)^{m}\left(a+b\sin\left(x\right)\right)\mathrm{e}^{x}\mathrm{d}x = A+B\mathrm{e}^{\pi}
+}
+$$
+
+## E^(q*Pi)
+
+类似地，令
+
+$$
+I_{q,n} = \int\sin^{n}\left(x\right)\mathrm{e}^{qx}\mathrm{d}x
+$$
+
+则
+
+$$
+\begin{aligned}
+  I_{q,n} 
+  &= \int\sin^{n}\left(x\right)\mathrm{e}^{qx}\mathrm{d}x \\
+  &= \dfrac{\sin^{n}\left(x\right)\mathrm{e}^{qx}}{q}-\dfrac{n}{q}\int\sin^{n-1}\left(x\right)\cos\left(x\right)\mathrm{e}^{qx}\mathrm{d}x \\
+\end{aligned}
+$$
+
+其中
+
+$$
+\begin{aligned}
+  \int\sin^{n-1}\left(x\right)\cos\left(x\right)\mathrm{e}^{qx}\mathrm{d}x
+  &= \dfrac{1}{q}\int\sin^{n-1}\left(x\right)\cos\left(x\right)\mathrm{d}\left(\mathrm{e}^{qx}\right) \\
+  &= \dfrac{\sin^{n-1}\left(x\right)\cos\left(x\right)\mathrm{e}^{qx}}{q}-\dfrac{1}{q}\int\mathrm{e}^{qx}\mathrm{d}\left(\sin^{n-1}\left(x\right)\cos\left(x\right)\right) \\
+  &= \dfrac{\sin^{n-1}\left(x\right)\cos\left(x\right)\mathrm{e}^{qx}}{q}-\dfrac{1}{q}\int\left(-n\sin^{n}\left(x\right)+\left(n-1\right)\sin^{n-2}\left(x\right)\right)\mathrm{e}^{qx}\mathrm{d}x \\
+  &= \dfrac{\sin^{n-1}\left(x\right)\cos\left(x\right)\mathrm{e}^{qx}}{q}+\dfrac{n}{q}I_{q,n}-\dfrac{n-1}{q}I_{q,n-2}
+\end{aligned}
+$$
+
+代入并移项
+
+$$
+\boxed{
+  I_{q,n} = \dfrac{\mathrm{e}^{qx}\left(q\sin^{n}\left(x\right)-n\sin^{n-1}\left(x\right)\cos\left(x\right)\right)+n\left(n-1\right)I_{q,n-2}}{q^{2}+n^{2}}
+}
+$$
+
+对于递推起点 $I_{q,0},I_{q,1}$，有
+
+$$
+\boxed{
+  \begin{aligned}
+    I_{q,0} &= \int\mathrm{e}^{qx}\mathrm{d}x = \dfrac{\mathrm{e}^{qx}}{q} + C \\
+    I_{q,1} &= \int\sin\left(x\right)\mathrm{e}^{qx}\mathrm{d}x = \dfrac{\mathrm{e}^{qx}}{q^{2}+1}\left(q\sin{\left(x\right)}-\cos{\left(x\right)}\right) + C
+  \end{aligned}
+}
+$$
+
+令积分下界为 $0$，上界为 $\pi$
+
+$$
+\boxed{
+  \begin{aligned}
+    I_{q,0} &= -\dfrac{1}{q}+\dfrac{\mathrm{e}^{q\pi}}{q} \\
+    I_{q,1} &= \dfrac{1}{1+q^{2}}+\dfrac{\mathrm{e}^{q\pi}}{1+q^{2}} \\
+    I_{q,n} &= \dfrac{n\left(n-1\right)}{q^{2}+n^{2}}\cdot I_{q,n-2}
+  \end{aligned} \quad
+  \left(I_{n} := \int_{0}^{\pi}\sin^{n}\left(x\right)\mathrm{e}^{qx}\mathrm{d}x\right)
+}
+$$
+
+因此
+
+$$
+\boxed{
+  \int_{0}^{\pi}\sin^{n}\left(x\right)\left(1-\sin\left(x\right)\right)^{m}\left(a+b\sin\left(x\right)\right)\mathrm{e}^{qx}\mathrm{d}x = A+B\mathrm{e}^{q\pi}
+}
+$$

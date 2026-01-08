@@ -47,3 +47,8 @@ nav:
     - F(a, S) = 0 类数列通项: math/F_a_S_0_seq.md
     - 均值不等式证明（AM-GM）: math/AM_GM_proof.md
     - 等差数列的 k 阶前缀和: math/AP_k_prefix_sum.md
+    - 牛顿恒等式: math/newton_identity.md
+    - Sin x 的无穷乘积表达: math/sin_x_infinite_product.md
+    - 欧拉第二积分: math/gamma-function.md
+    - 巴塞尔问题和 zeta(2k): math/zeta_2k.md
+    - Attention is all you need (Inequality Proof): math/Attention_is_all_you_need_inequality.md
