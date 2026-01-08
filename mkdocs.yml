@@ -45,3 +45,4 @@ nav:
   - Home: index.md
   - Math:
     - F(a, S) = 0 类数列通项: math/F_a_S_0_seq.md
+    - 均值不等式证明（AM-GM）: math/AM_GM_proof.md
