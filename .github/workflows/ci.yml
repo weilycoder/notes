@@ -26,3 +26,4 @@ jobs:
             mkdocs-material-
       - run: pip install mkdocs-material
       - run: python -u run_with_url.py "gh-deploy --force" https://weilycoder.github.io/notes/
+      - run: python -u run_with_url.py "gh-deploy --force --remote-branch cf-pages --site-dir cf-pages" https://weilycoder.dpdns.org/
