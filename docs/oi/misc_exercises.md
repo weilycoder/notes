@@ -159,6 +159,74 @@ $$
     }
     ```
 
+## *[3]* Linear Inequation (ABC 436 G)
+
+绝妙题．
+
+> 给定长度为 $N$ 的正整数序列 $A=\left(A_1,A_2,\ldots,A_n\right)$ 和正整数 $M$．
+>
+> 求满足下述条件的长度为 $N$ 的非负整数序列 $x=\left(x_1,x_2,\ldots,x_n\right)$ 的数量．
+>
+> $$
+> \sum_{i=1}^{N}A_i x_i \leqslant M
+> $$
+>
+> + $1\leqslant N\leqslant 100$；
+> + $1\leqslant A_i\leqslant 100$；
+> + $1\leqslant M\leqslant 10^{18}$．
+
+问题等价于无限背包，考虑将其转化为多重背包．
+
+使用多重背包的经典优化，对物品进行二进制分组．
+
+考虑不实际上加入新物品，而是每次遍历一遍物品序列，第 $i$ 次将重为 $A_i\times 2^{i-1}$ 的物品加进背包．
+
+但是这个背包容量 $M$ 是 $10^{18}$ 量级的，$\mathcal O\left(NM\log M\right)$ 无法接受．
+
+注意到在第 $i$ 次遍历时，每件物品的重量均可以被 $2^{i-1}$ 整除，因此考虑每遍历一次物品序列就将 $M$ 减半．
+
+这样，为了将每个物品都加进去，大概只需要维护 $2\left(\sum A_i\right) + \mathcal O\left(1\right)$ 的背包空间．
+
+时间复杂度 $\mathcal O\left(N^2A\log M\right)$，这里 $A$ 为值域．
+
+??? note "Code"
+
+    ```cpp
+    #include <bits/stdc++.h>
+    using namespace std;
+
+    constexpr uint64_t mod = 998244353;
+
+    int main() {
+      cin.tie(nullptr)->sync_with_stdio(false);
+      cin.exceptions(cin.failbit | cin.badbit);
+
+      size_t n;
+      uint64_t m;
+      cin >> n >> m;
+
+      vector<uint64_t> weight(n);
+      for (size_t i = 0; i < n; ++i)
+        cin >> weight[i];
+
+      uint64_t v = *max_element(weight.begin(), weight.end());
+      uint64_t size = 2 * (v + 1) * (n + 1) + 2;
+      vector<uint64_t> F(size);
+      F[0] = 1;
+      for (; m; m >>= 1) {
+        for (size_t j = 0; j < n; ++j)
+          for (size_t k = F.size() - 1; k >= weight[j]; --k)
+            (F[k] += F[k - weight[j]]) %= mod;
+        vector<uint64_t> G(F.size());
+        for (size_t j = m & 1; j < F.size(); j += 2)
+          (G[j >> 1] += j > 0 ? F[j - 1] + F[j] : F[j]) %= mod;
+        F.swap(G);
+      }
+      cout << F[0] << '\n';
+      return 0;
+    }
+    ```
+
 ## *[5]* Binary Operation (ABC 418 G)
 
 > 称一个由 $\mathtt{0}$ 和 $\mathtt{1}$ 构成的字符串 $S$ 是好的，当且仅当其可以经过以下任意次操作后得到 $\mathtt{1}$．
@@ -231,16 +299,16 @@ $$
 
 $$
 \begin{aligned}
-  \mathtt{0} &\to \mathtt{0} \\
-  \mathtt{1} &\to \mathtt{1} \\
-  \mathtt{00} &\to \mathtt{1} \\
-  \mathtt{01} &\to \mathtt{0} \\
-  \mathtt{10} &\to \mathtt{0} \\
-  \mathtt{11} &\to \mathtt{0} \\
-  \mathtt{000} &\to \mathtt{0} \\
-  \mathtt{010} &\to \mathtt{1} \\
-  \mathtt{101} &\to \mathtt{0} \\
-  \mathtt{111} &\to \mathtt{0}
+    \mathtt{0} &\to \mathtt{0} \\
+    \mathtt{1} &\to \mathtt{1} \\
+    \mathtt{00} &\to \mathtt{1} \\
+    \mathtt{01} &\to \mathtt{0} \\
+    \mathtt{10} &\to \mathtt{0} \\
+    \mathtt{11} &\to \mathtt{0} \\
+    \mathtt{000} &\to \mathtt{0} \\
+    \mathtt{010} &\to \mathtt{1} \\
+    \mathtt{101} &\to \mathtt{0} \\
+    \mathtt{111} &\to \mathtt{0}
 \end{aligned}
 $$
 
@@ -258,12 +326,12 @@ $$
 
 $$
 \begin{aligned}
-  \mathtt{0} &\to \mathtt{0} \\
-  \mathtt{1} &\to \mathtt{1} \\
-  \mathtt{00} &\to \mathtt{1} \\
-  \mathtt{01} &\to \mathtt{0} \\
-  \mathtt{10} &\to \mathtt{1} \\
-  \mathtt{11} &\to \mathtt{0}
+    \mathtt{0} &\to \mathtt{0} \\
+    \mathtt{1} &\to \mathtt{1} \\
+    \mathtt{00} &\to \mathtt{1} \\
+    \mathtt{01} &\to \mathtt{0} \\
+    \mathtt{10} &\to \mathtt{1} \\
+    \mathtt{11} &\to \mathtt{0}
 \end{aligned}
 $$
 
@@ -279,12 +347,12 @@ $$
 
 $$
 \begin{aligned}
-  \mathtt{0} &\to \mathtt{0} \\
-  \mathtt{1} &\to \mathtt{1} \\
-  \mathtt{00} &\to \mathtt{1} \\
-  \mathtt{01} &\to \mathtt{1} \\
-  \mathtt{10} &\to \mathtt{0} \\
-  \mathtt{11} &\to \mathtt{0}
+    \mathtt{0} &\to \mathtt{0} \\
+    \mathtt{1} &\to \mathtt{1} \\
+    \mathtt{00} &\to \mathtt{1} \\
+    \mathtt{01} &\to \mathtt{1} \\
+    \mathtt{10} &\to \mathtt{0} \\
+    \mathtt{11} &\to \mathtt{0}
 \end{aligned}
 $$
 
@@ -294,7 +362,7 @@ $$
 
 $\mathtt{1011}$ 的翻转版
 
-  只有末位为 $\mathtt{0}$ 且其余位均为 $\mathtt{1}$ 的字符串不符合要求．
+只有末位为 $\mathtt{0}$ 且其余位均为 $\mathtt{1}$ 的字符串不符合要求．
 
 #### 1110
 
@@ -302,16 +370,16 @@ $\mathtt{1011}$ 的翻转版
 
 $$
 \begin{aligned}
-  \mathtt{0} &\to \mathtt{0} \\
-  \mathtt{1} &\to \mathtt{1} \\
-  \mathtt{00} &\to \mathtt{1} \\
-  \mathtt{01} &\to \mathtt{1} \\
-  \mathtt{10} &\to \mathtt{1} \\
-  \mathtt{11} &\to \mathtt{0} \\
-  \mathtt{000} &\to \mathtt{1} \\
-  \mathtt{010} &\to \mathtt{1} \\
-  \mathtt{101} &\to \mathtt{0} \\
-  \mathtt{111} &\to \mathtt{1}
+    \mathtt{0} &\to \mathtt{0} \\
+    \mathtt{1} &\to \mathtt{1} \\
+    \mathtt{00} &\to \mathtt{1} \\
+    \mathtt{01} &\to \mathtt{1} \\
+    \mathtt{10} &\to \mathtt{1} \\
+    \mathtt{11} &\to \mathtt{0} \\
+    \mathtt{000} &\to \mathtt{1} \\
+    \mathtt{010} &\to \mathtt{1} \\
+    \mathtt{101} &\to \mathtt{0} \\
+    \mathtt{111} &\to \mathtt{1}
 \end{aligned}
 $$
 
