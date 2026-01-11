@@ -67,7 +67,9 @@ nav:
   - Home: index.md
   - Math:
     - 杂题选做: math/misc_exercises.md
-    - 圆锥曲线及二级结论: math/conic_sections_secondary_results.md
+    - 圆锥曲线:
+      - 圆锥曲线及二级结论: math/conic_sections_secondary_results.md
+      - 调和点列与极点极线: math/harmonic_division_poles_polars.md
     - 均值不等式证明（AM-GM）: math/AM_GM_proof.md
     - 等差数列的 k 阶前缀和: math/AP_k_prefix_sum.md
     - 牛顿恒等式: math/newton_identity.md
