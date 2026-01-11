@@ -2,7 +2,10 @@
 
 ### 椭圆
 
-![x^2/3+y^2=1](../image/ellipse_0.png)
+<figure markdown="span">
+    ![x^2/3+y^2=1](../image/ellipse_0.png)
+    <figcaption>\(\small x^2/3+y^2=1\)</figcaption>
+</figure>
 
 平面内与两个定点 $F_1,F_2$ 距离之和等于常数 $2a\left(2a\gt\left\vert F_1 F_2 \right\vert\right)$ 的点的轨迹称为**椭圆**．
 
@@ -98,7 +101,10 @@ $$
 
 ### 双曲线
 
-![x^2-y^2/3](../image/hyperbola_0.png)
+<figure markdown="span">
+    ![x^2-y^2/3=1](../image/hyperbola_0.png)
+    <figcaption>\(\small x^2-y^2/3=1\)</figcaption>
+</figure>
 
 平面内与两个定点 $F_1,F_2$ 的距离之差的绝对值等于常数 $2a(0\lt 2a\lt \left\vert F_1 F_2\right\vert)$ 的点的轨迹称为**双曲线**．
 
@@ -416,3 +422,13 @@ $$
 因此，部分人将这一性质作为圆锥曲线的第三定义，即在**平面直角坐标系中**，与两定点斜率之积为定值的点的轨迹是圆锥曲线的**一部分**．
 
 加粗的部分是这一定义的两个缺陷，另两个缺陷是这一定义只能作出对称轴平行于坐标轴的圆锥曲线，以及对于抛物线没有良好描述．
+
+<figure markdown="span">
+    ![x^2+xy+y^2=36](../image/ellipse_1.png)
+    <figcaption>\(\small x^2+xy+y^2=36\)</figcaption>
+</figure>
+
+<figure markdown="span">
+    ![x^2-xy-y^2=4](../image/hyperbola_1.png)
+    <figcaption>\(\small x^2-xy-y^2=4\)</figcaption>
+</figure>
