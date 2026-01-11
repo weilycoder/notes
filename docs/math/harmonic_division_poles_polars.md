@@ -47,7 +47,7 @@ $$
 一个比较简洁的方法是通过三角形面积公式将 $\mathrm{(1)}$ 转化为
 
 $$
-\tag{3} \dfrac{\sin\angle AOC}{\sin\angle COB} = -\dfrac{\sin\angle AOD}{\sin\angle DOB},
+\tag{3} \dfrac{\sin\angle AOC}{\sin\angle COB} = \dfrac{\sin\angle AOD}{\sin\angle DOB},
 $$
 
 两个常用推论：
