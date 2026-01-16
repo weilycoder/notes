@@ -81,4 +81,6 @@ nav:
       - 杂题选做: oi/misc_exercises.md
       - 最短路算法: oi/shortest_path_algorithms.md
   - Tools:
-      tools/about.md
+      - tools/about.md
+      - Clash:
+          - Hiddify: tools/clash/hiddify.md
