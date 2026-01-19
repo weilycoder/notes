@@ -70,8 +70,13 @@ nav:
   - Math:
       - 杂题选做: math/misc_exercises.md
       - 圆锥曲线:
-          - 圆锥曲线及二级结论: math/conic_sections_secondary_results.md
-          - 调和点列与极点极线: math/harmonic_division_poles_polars.md
+          - 标准方程（第一定义）: math/conic_section/first_definition.md
+          - 焦半径公式（第二定义）: math/conic_section/second_definition.md
+          - 广义垂径定理（第三定义）: math/conic_section/third_definition.md
+          - 极坐标方程: math/conic_section/polar_equation.md
+          - 焦点三角形: math/conic_section/focal_triangle.md
+          - 调和点列与极点极线: math/conic_section/harmonic_division_poles_polars.md
+          - 杂项: math/conic_section/misc.md
       - 均值不等式证明（AM-GM）: math/AM_GM_proof.md
       - 等差数列的 k 阶前缀和: math/AP_k_prefix_sum.md
       - 牛顿恒等式: math/newton_identity.md
