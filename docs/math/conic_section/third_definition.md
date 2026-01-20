@@ -66,12 +66,12 @@ $$
 加粗的部分是这一定义的两个缺陷，另两个缺陷是这一定义只能作出对称轴平行于坐标轴的圆锥曲线，以及对于抛物线没有良好描述．
 
 <figure markdown="span">
-    ![x^2+xy+y^2=36](../../image/ellipse_1.png)
+    ![x^2+xy+y^2=36](./image/ellipse_1.png)
     <figcaption>\(\small x^2+xy+y^2=36\)</figcaption>
 </figure>
 
 <figure markdown="span">
-    ![x^2-xy-y^2=4](../../image/hyperbola_1.png)
+    ![x^2-xy-y^2=4](./image/hyperbola_1.png)
     <figcaption>\(\small x^2-xy-y^2=4\)</figcaption>
 </figure>
 

@@ -1,7 +1,7 @@
 ## 椭圆
 
 <figure markdown="span">
-    ![x^2/3+y^2=1](../../image/ellipse_0.png)
+    ![x^2/3+y^2=1](./image/ellipse_0.png)
     <figcaption>\(\small x^2/3+y^2=1\)</figcaption>
 </figure>
 
@@ -100,7 +100,7 @@ $$
 ## 双曲线
 
 <figure markdown="span">
-    ![x^2-y^2/3=1](../../image/hyperbola_0.png)
+    ![x^2-y^2/3=1](./image/hyperbola_0.png)
     <figcaption>\(\small x^2-y^2/3=1\)</figcaption>
 </figure>
 
