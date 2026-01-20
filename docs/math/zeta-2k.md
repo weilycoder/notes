@@ -1,6 +1,6 @@
 ## zeta(2)（巴塞尔问题）
 
-熟知 $\sin\left(x\right)$ 的无穷级数展开和[无穷乘积展开](./sin_x_infinite_product.md)：
+熟知 $\sin\left(x\right)$ 的无穷级数展开和[无穷乘积展开](./sin-x-infinite-product.md)：
 
 $$
 \begin{aligned}
@@ -56,7 +56,7 @@ $$
 
 ## zeta(2k)
 
-直接将[牛顿恒等式](./newton_identity.md)作用到无穷求和上，有
+直接将[牛顿恒等式](./newton-identity.md)作用到无穷求和上，有
 
 $$
 \boxed{

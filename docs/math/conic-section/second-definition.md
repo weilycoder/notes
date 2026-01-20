@@ -2,7 +2,7 @@
 
 ### 焦半径公式
 
-[标准方程（第一定义）](./first_definition.md)中 $\mathrm{(4)}$ 式指出，
+[标准方程（第一定义）](./first-definition.md)中 $\mathrm{(4)}$ 式指出，
 
 $$
 \left\vert PF_1\right\vert=\sqrt{\left(x+c\right)^2+y^2} = a+\dfrac{cx}{a}.
@@ -53,7 +53,7 @@ $$
 
 ### 焦半径公式
 
-根据[标准方程（第一定义）](./first_definition.md)中 $\mathrm{(10)}$ 式，与椭圆类似，可得
+根据[标准方程（第一定义）](./first-definition.md)中 $\mathrm{(10)}$ 式，与椭圆类似，可得
 
 $$
 \tag{8} \begin{cases}

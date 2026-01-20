@@ -4,7 +4,7 @@
 
 在原直角坐标系下考虑，作准线 $l_1:x=-\dfrac{a^2}{c}$．过 $P$ 作 $PG$ 垂直于 $x$ 轴，垂足为 $G$；作 $PH$ 垂直于 $l_1$，垂足为 $H$．过 $F_1$ 作 $F_1E$ 垂直于 $l_1$，垂足为 $E$．
 
-根据[焦半径公式（第二定义）](./second_definition.md)推得的结论，有
+根据[焦半径公式（第二定义）](./second-definition.md)推得的结论，有
 
 $$
 \begin{aligned}

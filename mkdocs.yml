@@ -68,25 +68,25 @@ plugins:
 nav:
   - Home: index.md
   - Math:
-      - 杂题选做: math/misc_exercises.md
+      - 杂题选做: math/misc-exercises.md
       - 圆锥曲线:
-          - 标准方程（第一定义）: math/conic_section/first_definition.md
-          - 焦半径公式（第二定义）: math/conic_section/second_definition.md
-          - 广义垂径定理（第三定义）: math/conic_section/third_definition.md
-          - 极坐标方程: math/conic_section/polar_equation.md
-          - 焦点三角形: math/conic_section/focal_triangle.md
-          - 调和点列与极点极线: math/conic_section/harmonic_division_poles_polars.md
-          - 杂项: math/conic_section/misc.md
-      - 均值不等式证明（AM-GM）: math/AM_GM_proof.md
-      - 等差数列的 k 阶前缀和: math/AP_k_prefix_sum.md
-      - 牛顿恒等式: math/newton_identity.md
-      - Sin x 的无穷乘积表达: math/sin_x_infinite_product.md
+          - 标准方程（第一定义）: math/conic-section/first-definition.md
+          - 焦半径公式（第二定义）: math/conic-section/second-definition.md
+          - 广义垂径定理（第三定义）: math/conic-section/third-definition.md
+          - 极坐标方程: math/conic-section/polar-equation.md
+          - 焦点三角形: math/conic-section/focal-triangle.md
+          - 调和点列与极点极线: math/conic-section/harmonic-division-poles-polars.md
+          - 杂项: math/conic-section/misc.md
+      - 均值不等式证明（AM-GM）: math/AM-GM-proof.md
+      - 等差数列的 k 阶前缀和: math/AP-k-prefix-sum.md
+      - 牛顿恒等式: math/newton-identity.md
+      - Sin x 的无穷乘积表达: math/sin-x-infinite-product.md
       - 欧拉第二积分: math/gamma-function.md
-      - 巴塞尔问题和 zeta(2k): math/zeta_2k.md
-      - Attention is all you need (Inequality Proof): math/Attention_is_all_you_need_inequality.md
+      - 巴塞尔问题和 zeta(2k): math/zeta-2k.md
+      - Attention is all you need (Inequality Proof): math/Attention-is-all-you-need-inequality.md
   - OI:
-      - 杂题选做: oi/misc_exercises.md
-      - 最短路算法: oi/shortest_path_algorithms.md
+      - 杂题选做: oi/misc-exercises.md
+      - 最短路算法: oi/shortest-path-algorithms.md
   - Tools:
       - tools/about.md
       - Clash:

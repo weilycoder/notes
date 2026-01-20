@@ -58,7 +58,7 @@ $$
 ## 完全四边形
 
 <figure markdown="span">
-    ![complete_quadrangle](./image/complete_quadrangle.png)
+    ![complete_quadrangle](./image/complete-quadrangle.png)
     <figcaption>*完全四边形*</figcaption>
 </figure>
 
