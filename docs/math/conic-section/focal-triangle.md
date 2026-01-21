@@ -21,3 +21,23 @@ $$
 $$
 \tag{28} S_{\triangle F_1F_2P} = c\left\vert y_{P}\right\vert = b^2\cot\dfrac{\theta}{2}.
 $$
+
+## 内心和旁心运动轨迹
+
+<figure markdown="span">
+    ![ellipse-focal-triangle](./image/ellipse-focal-triangle-incentre.png)
+    <figcaption><i>椭圆中的焦点三角形以及内心和旁心</i></figcaption>
+</figure>
+
+<figure markdown="span">
+    ![hyperbola-focal-triangle](./image/hyperbola-focal-triangle-incentre.png)
+    <figcaption><i>双曲线中的焦点三角形以及内心和旁心</i></figcaption>
+</figure>
+
+结论是，对于椭圆，内心和 $F_1F_2$ 对应的旁心的轨迹是椭圆；其余两个旁心的轨迹是直线．
+
+对于双曲线（假设 $P$ 只在一支上运动），内心和 $F_1F_2$ 对应的旁心轨迹是直线的一部分；其余两个旁心的轨迹是两个离心率不等的双曲线的一支．
+
+同时可以从图中看到，上述轨迹中的直线均与曲线的左顶点或右顶点相切．
+
+这些结论可以使用三角形的内心坐标公式验证．
