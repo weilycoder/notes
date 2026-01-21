@@ -41,3 +41,46 @@ $$
 同时可以从图中看到，上述轨迹中的直线均与曲线的左顶点或右顶点相切．
 
 这些结论可以使用三角形的内心坐标公式验证．
+
+---
+
+下面以椭圆内心为例展示推导过程．
+
+设椭圆方程为 $\dfrac{x^2}{a^2}+\dfrac{y^2}{b^2}=1\left(a\gt b\gt 0\right)$，则 $F_1\left(-c,0\right),F_2\left(c,0\right),P\left(x_0,y_0\right)$，并且记 $d_1=\left\vert PF_1\right\vert,d_2=\left\vert PF_2\right\vert$．
+
+根据内心坐标公式，有
+
+$$
+\begin{aligned}
+    x_I &= \dfrac{-cd_2+cd_1+2cx_0}{d_1+d_2+2c}, \\
+    y_I &= \dfrac{2cy_0}{d_1+d_2+2c}.
+\end{aligned}
+$$
+
+其中 $d_1+d_2$ 根据椭圆定义为 $2a$，又
+
+$$
+\begin{aligned}
+    \left(d_1-d_2\right)\left(d_1+d_2\right)
+    &= d_1^2-d_2^2 \\
+    &= \left(x_0+c\right)^2-\left(x_0-c\right)^2 \\
+    &= 4cx_0,
+\end{aligned}
+$$
+
+因此 $d_1-d_2=\dfrac{2cx_0}{a}$，代入内心坐标，有
+
+$$
+\begin{aligned}
+    x_I &= \dfrac{-cd_2+cd_1+2cx_0}{d_1+d_2+2c} \\
+    &= \dfrac{\frac{2c^2x_0}{a}+2cx_0}{2\left(a+c\right)} \\
+    &= \dfrac{2c^2x_0+2acx_0}{2a\left(a+c\right)} \\
+    &= \dfrac{2cx_0\left(c+a\right)}{2a\left(a+c\right)} \\
+    &= \dfrac{cx_0}{a}, \\
+    y_I &= \dfrac{2cy_0}{d_1+d_2+2c} \\
+    &= \dfrac{2cy_0}{2a+2c} \\
+    &= \dfrac{cy_0}{a+c}. \\
+\end{aligned}
+$$
+
+即 $I\left(\dfrac{cx_0}{a},\dfrac{cy_0}{a+c}\right)$，故其轨迹方程为 $\dfrac{x^2}{c^2}+\dfrac{y^2}{\left(\dfrac{bc}{a+c}\right)^2}=1$．
