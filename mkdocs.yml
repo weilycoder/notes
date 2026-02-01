@@ -91,3 +91,5 @@ nav:
       - tools/about.md
       - Clash:
           - Hiddify: tools/clash/hiddify.md
+      - Github:
+          - education: tools/github/education.md
