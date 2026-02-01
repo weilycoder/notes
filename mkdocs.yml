@@ -1,5 +1,8 @@
 site_name: weilycoder's Notes
 site_url: ${SITE_URL}
+repo_url: https://github.com/weilycoder/notes
+repo_name: weilycoder/notes
+copyright: Copyright &copy; 2025 - 2026 weilycoder
 
 theme:
   name: material
