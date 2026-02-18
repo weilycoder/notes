@@ -93,6 +93,7 @@ nav:
   - OI:
       - 杂题选做: oi/misc-exercises.md
       - 最短路算法: oi/shortest-path-algorithms.md
+      - SPFA 松弛次数的蒙特卡洛试验: oi/spfa-monte-carlo.md
   - Tools:
       - tools/about.md
       - Clash:
