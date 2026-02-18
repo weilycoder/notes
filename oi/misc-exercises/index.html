@@ -1,0 +1,2745 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://weilycoder.dpdns.org/oi/misc-exercises/">
+      
+      
+        <link rel="prev" href="../../physics/misc-exercises/">
+      
+      
+        <link rel="next" href="../shortest-path-algorithms/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>杂题选做 - weilycoder's Notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#2-p-smooth-number-abc-300-g" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="weilycoder&#39;s Notes" class="md-header__button md-logo" aria-label="weilycoder's Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            weilycoder's Notes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              杂题选做
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/weilycoder/notes" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    weilycoder/notes
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../math/misc-exercises/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Math
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../physics/misc-exercises/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Physics
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  
+    
+  
+  OI
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../tools/about/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Tools
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="weilycoder&#39;s Notes" class="md-nav__button md-logo" aria-label="weilycoder's Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    weilycoder's Notes
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/weilycoder/notes" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    weilycoder/notes
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Math
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Math
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../math/misc-exercises/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    杂题选做
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    圆锥曲线
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    圆锥曲线
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../math/conic-section/first-definition/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    标准方程（第一定义）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../math/conic-section/second-definition/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    焦半径公式（第二定义）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../math/conic-section/third-definition/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    广义垂径定理（第三定义）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../math/conic-section/polar-equation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    极坐标方程
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../math/conic-section/focal-triangle/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    焦点三角形
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../math/conic-section/harmonic-division-poles-polars/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    调和点列与极点极线
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../math/conic-section/misc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    杂项
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../math/AM-GM-proof/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    均值不等式证明（AM-GM）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../math/AP-k-prefix-sum/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    等差数列的 k 阶前缀和
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../math/newton-identity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    牛顿恒等式
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../math/sin-x-infinite-product/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sin x 的无穷乘积表达
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../math/gamma-function/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    欧拉第二积分
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../math/zeta-2k/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    巴塞尔问题和 zeta(2k)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../math/Attention-is-all-you-need-inequality/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Attention is all you need (Inequality Proof)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Physics
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Physics
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../physics/misc-exercises/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    杂题选做
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OI
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    OI
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    杂题选做
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    杂题选做
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#2-p-smooth-number-abc-300-g" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        [2] P-smooth number (ABC 300 G)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-sqrtn2nx-abc-420-g" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        [2] sqrt(n²+n+X) (ABC 420 G)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-linear-inequation-abc-436-g" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        [3] Linear Inequation (ABC 436 G)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-binary-operation-abc-418-g" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        [5] Binary Operation (ABC 418 G)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="[5] Binary Operation (ABC 418 G)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#algo-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Algo 1
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Algo 1">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#0000" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        0000
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#0001" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        0001
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#0010" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        0010
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#0011" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        0011
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#0100" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        0100
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#0101" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        0101
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#0110" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        0110
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#0111" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        0111
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1000" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1000
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1001" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1001
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1010" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1010
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1011" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1011
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1100" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1100
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1101" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1101
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1110" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1110
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1111" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1111
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#algo-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Algo 2
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../shortest-path-algorithms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    最短路算法
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../spfa-monte-carlo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SPFA 松弛次数的蒙特卡洛试验
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tools
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Tools
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Clash
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Clash
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/clash/hiddify/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hiddify
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Github
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Github
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/github/education/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    education
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    WSL
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    WSL
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/wsl/installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/wsl/configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/wsl/zsh/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Zsh
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#2-p-smooth-number-abc-300-g" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        [2] P-smooth number (ABC 300 G)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-sqrtn2nx-abc-420-g" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        [2] sqrt(n²+n+X) (ABC 420 G)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-linear-inequation-abc-436-g" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        [3] Linear Inequation (ABC 436 G)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-binary-operation-abc-418-g" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        [5] Binary Operation (ABC 418 G)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="[5] Binary Operation (ABC 418 G)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#algo-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Algo 1
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Algo 1">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#0000" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        0000
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#0001" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        0001
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#0010" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        0010
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#0011" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        0011
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#0100" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        0100
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#0101" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        0101
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#0110" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        0110
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#0111" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        0111
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1000" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1000
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1001" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1001
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1010" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1010
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1011" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1011
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1100" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1100
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1101" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1101
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1110" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1110
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1111" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1111
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#algo-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Algo 2
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navigation" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Home
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="./" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    OI
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/weilycoder/notes/edit/master/docs/oi/misc-exercises.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+    
+      
+    
+    <a href="https://github.com/weilycoder/notes/raw/master/docs/oi/misc-exercises.md" title="View source of this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"/></svg>
+    </a>
+  
+
+
+  <h1>杂题选做</h1>
+
+<p>存档一份 <a href="https://qoj.ac/blog/qingyu/blog/1280">QOJ 难度评级说明</a>，方便估计难度．</p>
+<p>但是好像极限在难度 4 ~ 5 了．</p>
+<details class="note">
+<summary>QOJ 难度</summary>
+<ul>
+<li>难度 0 ：最简单的竞技题目，即使是没有任何算法竞赛经历的人士，在具备使用任意一种编程语言编写程序的能力下便可轻松通过，大致可对应 Codeforces 难度 800 ~ 1000 的题目，TopCoder SRM Div. 2 的 250 分题目，或是 AtCoder Beginner Contest 的第一道题目．</li>
+<li>难度 1：需要选手具有一定时间的程序设计经验，或者需要使用初步的数学与简单的算法设计能力．不具备算法竞赛经历的选手仍可解决这些题目，但可能需要消耗一定的时间．大致可对应 Codeforces 难度 1000 ~ 1600 的题目，亚洲区域赛或 NERC 区域赛的签到题的难度，以及 AtCoder Beginner Contest 的前四道题目．</li>
+<li>难度 2：具有一定竞技门槛的题目．题目考查了一些算法竞赛中常用的 trick，或者具备一定的思维难度．这一类题目可被定义为最低一档的「竞赛题」，未经训练的程序设计者在解决时会遇到许多困难．大致可对应 Codeforces 难度 1500 ~ 1900 的题目，亚洲区域赛或 NERC 区域赛区分铜牌队伍的题目的难度，以及 USACO Silver 难度的题目．</li>
+<li>难度 3：大致可对应 Codeforces 难度 1800 ~ 2400 的题目，ICPC 亚洲区域赛中区分铜牌 ～ 银牌队伍的题目的难度，以及通常 USACO 中 Gold 难度的题目．</li>
+<li>难度 4：大致可对应 Codeforces 难度 2300 ~ 2800 的题目，USACO Gold ~ Platinum 题目，ICPC 亚洲区域赛中区分银牌 ～ 金牌队伍的题目，以及国际信息学奥林匹克竞赛（IOI）大多数年份中难度最低一档的题目．在国际信息学奥林匹克竞赛（IOI）中通过的选手数大约在 100，而在 Universal Cup 中出现时通常的 AC 数为 70 ~ 100+．</li>
+<li>难度 5：大致可对应 Codeforces 难度 2600 ~ 3200 的题目，USACO Platinum 题目的难度，ICPC 亚洲区域赛中区分靠前金牌队伍甚至出线队伍区分度题目．在国际信息学奥林匹克竞赛（IOI）中通过的选手数通常在 50，在 ICPC World Finals 中出现时通常的 AC 数为 10 ~ 30，在 Universal Cup 中出现时通常的 AC 数为 20 ~ 50．</li>
+<li>难度 6：大致可对应 Codeforces 难度 3000 ~ 3500 的题目，ICPC 区域赛中针对前若干名队伍所区分的题目，ICPC 全球总决赛（World Finals）针对奖牌区队伍所区分的题目，以及国际信息学奥林匹克竞赛（IOI）中取得金牌的区分度所对应的题目．在国际信息学奥林匹克竞赛（IOI）中通过的选手数通常在 10 ～ 20，在 ICPC World Finals 中出现时通常的 AC 数为 3 ~ 10，在 Universal Cup 中出现时通常的 AC 数为 10 ~ 30．</li>
+<li>难度 7：大致可对应 Codeforces 难度 3500+ 的题目，ICPC 比赛中针对冠军队伍所区分的题目，以及国际信息学奥林匹克竞赛（IOI）中区分最顶尖的选手所对应的题目．在国际信息学奥林匹克竞赛（IOI）中通过的选手数通常在 0 ～ 5，在 ICPC World Finals 中出现时通常的 AC 数为 0 ~ 3，在 Universal Cup 中出现时通常的 AC 数为 1 ~ 10．</li>
+<li>难度 8：国际信息学奥林匹克竞赛（IOI）中难度最高的一档题目，不太可能在 Codeforces 或 AtCoder 等短时间多题数的比赛中有选手解出．即使在大多数比赛，也几乎没有队伍或选手通过的题目．只有最强的选手有机会在赛时通过这些题目，且需要消耗可观的时间．在国际信息学奥林匹克竞赛（IOI）中通过的选手数通常在 0 ～ 1，在 ICPC World Finals 中出现时通常的 AC 数为 0，在 Universal Cup 中出现时通常的 AC 数为 0 ~ 2．</li>
+<li>难度 9：难度极高的题目，在 IOI 或 ICPC 中不可能会被任何选手解出．即便在 AtCoder World Tour Finals、Meta Hacker Cup、Universal Cup 等时间较长且具有许多高水平算法竞赛选手的赛场上，有经验的选手经过长时间也可能会遇到很多阻碍，几乎不具有通过的可能性．在 Universal Cup 中出现时通常的 AC 数为 0．</li>
+<li>难度 10：没有任何机会的题目．题目的难度极高，在任何比赛中都不会有选手能够在数小时内解出此题．在 Universal Cup 中出现时通常的 AC 数为 0．</li>
+</ul>
+</details>
+<h2 id="2-p-smooth-number-abc-300-g"><em>[2]</em> P-smooth number (ABC 300 G)</h2>
+<blockquote>
+<p>若一个数的质因数均不超过 <span class="arithmatex">\(k\)</span>，称其为 <span class="arithmatex">\(k\)</span>-smooth number．</p>
+<p>给定 <span class="arithmatex">\(N,p\)</span> 求 <span class="arithmatex">\(N\)</span> 以内 <span class="arithmatex">\(p\)</span>-smooth number 的个数．</p>
+<ul>
+<li><span class="arithmatex">\(1\leqslant N\leqslant 10^{16}\)</span>；</li>
+<li><span class="arithmatex">\(2\leqslant p\leqslant 100\)</span>，且 <span class="arithmatex">\(p\)</span> 为质数．</li>
+</ul>
+</blockquote>
+<p>样例 2 极具提示性．</p>
+<p>注意到输入为 <span class="arithmatex">\(N=10^{16},p=97\)</span> 时，输出 <span class="arithmatex">\(2\ 345\ 134\ 674\)</span>，大约只有 <span class="arithmatex">\(2\times 10^{9}\)</span>．</p>
+<p>考虑暴搜．</p>
+<p>但是 2e9 就算是 AT 神机估计也得跑个 6s 左右．</p>
+<p>考虑 meet-in-middle，把 <span class="arithmatex">\(p\)</span> 以内的质数分成 2 组，分别暴搜．</p>
+<p>可以按质数从小到大交替分到两组中，平衡效率：</p>
+<div class="arithmatex">\[
+\begin{aligned}
+  P_{0} &amp;= \left\{2, 5, 11, 17, 23, 31, 41, 47, 59, 67, 73, 83, 97 \right\} \\
+  P_{1} &amp;= \left\{3, 7, 13, 19, 29, 37, 43, 53, 61, 71, 79, 89 \right\}
+\end{aligned}
+\]</div>
+<p>这样在 <span class="arithmatex">\(P_{0}\)</span> 中暴搜时枚举量为 <span class="arithmatex">\(6\ 269\ 654\)</span>，在 <span class="arithmatex">\(P_{1}\)</span> 中暴搜时枚举量为 <span class="arithmatex">\(1\ 913\ 116\)</span>；</p>
+<p>也可以把 <span class="arithmatex">\(97\)</span> 放到 <span class="arithmatex">\(P_{1}\)</span> 中，这样枚举量分别为 <span class="arithmatex">\(4\ 221\ 248\)</span> 和 <span class="arithmatex">\(2\ 864\ 380\)</span>．</p>
+<p>统计答案时可以排序后双指针．</p>
+<details class="note">
+<summary>Code</summary>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;bits/stdc++.h&gt;</span>
+<span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span>
+
+<span class="n">array</span><span class="o">&lt;</span><span class="kt">uint32_t</span><span class="p">,</span><span class="w"> </span><span class="mi">12</span><span class="o">&gt;</span><span class="w"> </span><span class="n">prime0</span><span class="p">{</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w"> </span><span class="mi">17</span><span class="p">,</span><span class="w"> </span><span class="mi">23</span><span class="p">,</span><span class="w"> </span><span class="mi">31</span><span class="p">,</span><span class="w"> </span><span class="mi">41</span><span class="p">,</span><span class="w"> </span><span class="mi">47</span><span class="p">,</span><span class="w"> </span><span class="mi">59</span><span class="p">,</span><span class="w"> </span><span class="mi">67</span><span class="p">,</span><span class="w"> </span><span class="mi">73</span><span class="p">,</span><span class="w"> </span><span class="mi">83</span><span class="p">};</span>
+<span class="n">array</span><span class="o">&lt;</span><span class="kt">uint32_t</span><span class="p">,</span><span class="w"> </span><span class="mi">13</span><span class="o">&gt;</span><span class="w"> </span><span class="n">prime1</span><span class="p">{</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w"> </span><span class="mi">13</span><span class="p">,</span><span class="w"> </span><span class="mi">19</span><span class="p">,</span><span class="w"> </span><span class="mi">29</span><span class="p">,</span><span class="w"> </span><span class="mi">37</span><span class="p">,</span><span class="w"> </span><span class="mi">43</span><span class="p">,</span><span class="w"> </span><span class="mi">53</span><span class="p">,</span><span class="w"> </span><span class="mi">61</span><span class="p">,</span><span class="w"> </span><span class="mi">71</span><span class="p">,</span><span class="w"> </span><span class="mi">79</span><span class="p">,</span><span class="w"> </span><span class="mi">89</span><span class="p">,</span><span class="w"> </span><span class="mi">97</span><span class="p">};</span>
+
+<span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="kt">size_t</span><span class="w"> </span><span class="n">Len</span><span class="o">&gt;</span>
+<span class="kt">void</span><span class="w"> </span><span class="n">dfs</span><span class="p">(</span><span class="kt">size_t</span><span class="w"> </span><span class="n">cur</span><span class="p">,</span><span class="w"> </span><span class="kt">uint64_t</span><span class="w"> </span><span class="n">val</span><span class="p">,</span><span class="w"> </span><span class="kt">uint64_t</span><span class="w"> </span><span class="n">limit</span><span class="p">,</span><span class="w"> </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">p</span><span class="p">,</span>
+<span class="w">        </span><span class="k">const</span><span class="w"> </span><span class="n">array</span><span class="o">&lt;</span><span class="kt">uint32_t</span><span class="p">,</span><span class="w"> </span><span class="n">Len</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="n">prime</span><span class="p">,</span><span class="w"> </span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">uint64_t</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="n">res</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">cur</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">Len</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">prime</span><span class="p">[</span><span class="n">cur</span><span class="p">]</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">p</span><span class="p">)</span>
+<span class="w">    </span><span class="n">res</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">val</span><span class="p">);</span>
+<span class="k">else</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(;</span><span class="w"> </span><span class="n">val</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">limit</span><span class="p">;</span><span class="w"> </span><span class="n">val</span><span class="w"> </span><span class="o">*=</span><span class="w"> </span><span class="n">prime</span><span class="p">[</span><span class="n">cur</span><span class="p">])</span>
+<span class="w">    </span><span class="n">dfs</span><span class="o">&lt;</span><span class="n">Len</span><span class="o">&gt;</span><span class="p">(</span><span class="n">cur</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">val</span><span class="p">,</span><span class="w"> </span><span class="n">limit</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="n">prime</span><span class="p">,</span><span class="w"> </span><span class="n">res</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="kt">size_t</span><span class="w"> </span><span class="n">Len</span><span class="o">&gt;</span>
+<span class="n">vector</span><span class="o">&lt;</span><span class="kt">uint64_t</span><span class="o">&gt;</span><span class="w"> </span><span class="n">get_smooth</span><span class="p">(</span><span class="kt">uint64_t</span><span class="w"> </span><span class="n">limit</span><span class="p">,</span><span class="w"> </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">p</span><span class="p">,</span>
+<span class="w">                            </span><span class="k">const</span><span class="w"> </span><span class="n">array</span><span class="o">&lt;</span><span class="kt">uint32_t</span><span class="p">,</span><span class="w"> </span><span class="n">Len</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="n">prime</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="n">vector</span><span class="o">&lt;</span><span class="kt">uint64_t</span><span class="o">&gt;</span><span class="w"> </span><span class="n">res</span><span class="p">;</span>
+<span class="n">dfs</span><span class="o">&lt;</span><span class="n">Len</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">limit</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="n">prime</span><span class="p">,</span><span class="w"> </span><span class="n">res</span><span class="p">);</span>
+<span class="n">sort</span><span class="p">(</span><span class="n">res</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="w"> </span><span class="n">res</span><span class="p">.</span><span class="n">end</span><span class="p">());</span>
+<span class="k">return</span><span class="w"> </span><span class="n">res</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="n">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="n">cin</span><span class="p">.</span><span class="n">tie</span><span class="p">(</span><span class="k">nullptr</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">sync_with_stdio</span><span class="p">(</span><span class="nb">false</span><span class="p">);</span>
+<span class="kt">uint64_t</span><span class="w"> </span><span class="n">N</span><span class="p">;</span>
+<span class="kt">uint32_t</span><span class="w"> </span><span class="n">p</span><span class="p">;</span>
+<span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">N</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">p</span><span class="p">;</span>
+<span class="k">auto</span><span class="w"> </span><span class="n">r1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">get_smooth</span><span class="p">(</span><span class="n">N</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="n">prime0</span><span class="p">);</span>
+<span class="k">auto</span><span class="w"> </span><span class="n">r2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">get_smooth</span><span class="p">(</span><span class="n">N</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="n">prime1</span><span class="p">);</span>
+<span class="kt">uint64_t</span><span class="w"> </span><span class="n">cnt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="kt">size_t</span><span class="w"> </span><span class="n">pt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">r2</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">uint64_t</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">r1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">pt</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">r2</span><span class="p">[</span><span class="n">pt</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">N</span><span class="p">)</span>
+<span class="w">    </span><span class="o">--</span><span class="n">pt</span><span class="p">;</span>
+<span class="w">    </span><span class="n">cnt</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">pt</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">cnt</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="sc">&#39;\n&#39;</span><span class="p">;</span>
+<span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+</details>
+<h2 id="2-sqrtn2nx-abc-420-g"><em>[2]</em> sqrt(n²+n+X) (ABC 420 G)</h2>
+<blockquote>
+<p>给定一个整数 <span class="arithmatex">\(X\)</span>，找出所有整数 <span class="arithmatex">\(n\)</span>，使得 <span class="arithmatex">\(\sqrt{n^{2}+n+X}\)</span> 是一个整数．</p>
+<ul>
+<li><span class="arithmatex">\(|X|\leqslant 10^{14}\)</span>．</li>
+</ul>
+</blockquote>
+<p>注意到</p>
+<div class="arithmatex">\[
+\begin{aligned}
+  n^{2}+n+X &amp;= m^{2} \\
+  4n^{2}+4n+4X &amp;= 4m^{2} \\
+  4n^{2}+4n+1-4m^{2} &amp;= 1-4X \\
+  \left(2n+1\right)^{2}-\left(2m\right)^{2} &amp;= 1-4X \\
+  \left(2n+2m+1\right)\left(2n-2m+1\right) &amp;= 1-4X \\
+\end{aligned}
+\]</div>
+<p>显然枚举 <span class="arithmatex">\(1-4X\)</span> 的所有因子即可．</p>
+<details class="note">
+<summary>Code</summary>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;bits/stdc++.h&gt;</span>
+<span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span>
+
+<span class="n">vector</span><span class="o">&lt;</span><span class="kt">int64_t</span><span class="o">&gt;</span><span class="w"> </span><span class="n">solve</span><span class="p">(</span><span class="kt">int64_t</span><span class="w"> </span><span class="n">X</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kt">int64_t</span><span class="w"> </span><span class="n">D</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">X</span><span class="p">;</span>
+<span class="w">  </span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int64_t</span><span class="o">&gt;</span><span class="w"> </span><span class="n">ans</span><span class="p">;</span>
+<span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int64_t</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">abs</span><span class="p">(</span><span class="n">D</span><span class="p">);</span><span class="w"> </span><span class="o">++</span><span class="n">p</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">D</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="n">p</span><span class="p">)</span>
+<span class="w">      </span><span class="k">continue</span><span class="p">;</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="kt">int64_t</span><span class="w"> </span><span class="n">u</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">D</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">u</span><span class="p">;</span>
+<span class="w">      </span><span class="kt">int64_t</span><span class="w"> </span><span class="n">r</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">u</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">r</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<span class="w">        </span><span class="n">ans</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">r</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">4</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="kt">int64_t</span><span class="w"> </span><span class="n">u</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">D</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">u</span><span class="p">;</span>
+<span class="w">      </span><span class="kt">int64_t</span><span class="w"> </span><span class="n">r</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">u</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">r</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<span class="w">        </span><span class="n">ans</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">r</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">4</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="w">  </span><span class="n">sort</span><span class="p">(</span><span class="n">ans</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="w"> </span><span class="n">ans</span><span class="p">.</span><span class="n">end</span><span class="p">());</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">ans</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="n">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">cin</span><span class="p">.</span><span class="n">tie</span><span class="p">(</span><span class="k">nullptr</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">sync_with_stdio</span><span class="p">(</span><span class="nb">false</span><span class="p">);</span>
+<span class="w">  </span><span class="kt">int64_t</span><span class="w"> </span><span class="n">X</span><span class="p">;</span>
+<span class="w">  </span><span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">X</span><span class="p">;</span>
+<span class="w">  </span><span class="k">auto</span><span class="w"> </span><span class="n">ans</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">solve</span><span class="p">(</span><span class="n">X</span><span class="p">);</span>
+<span class="w">  </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">ans</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="sc">&#39;\n&#39;</span><span class="p">;</span>
+<span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int64_t</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">ans</span><span class="p">)</span>
+<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="sc">&#39; &#39;</span><span class="p">;</span>
+<span class="w">  </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="sc">&#39;\n&#39;</span><span class="p">;</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+</details>
+<h2 id="3-linear-inequation-abc-436-g"><em>[3]</em> Linear Inequation (ABC 436 G)</h2>
+<p>绝妙题．</p>
+<blockquote>
+<p>给定长度为 <span class="arithmatex">\(N\)</span> 的正整数序列 <span class="arithmatex">\(A=\left(A_1,A_2,\ldots,A_n\right)\)</span> 和正整数 <span class="arithmatex">\(M\)</span>．</p>
+<p>求满足下述条件的长度为 <span class="arithmatex">\(N\)</span> 的非负整数序列 <span class="arithmatex">\(x=\left(x_1,x_2,\ldots,x_n\right)\)</span> 的数量．</p>
+<div class="arithmatex">\[
+\sum_{i=1}^{N}A_i x_i \leqslant M
+\]</div>
+<ul>
+<li><span class="arithmatex">\(1\leqslant N\leqslant 100\)</span>；</li>
+<li><span class="arithmatex">\(1\leqslant A_i\leqslant 100\)</span>；</li>
+<li><span class="arithmatex">\(1\leqslant M\leqslant 10^{18}\)</span>．</li>
+</ul>
+</blockquote>
+<p>问题等价于无限背包，考虑将其转化为多重背包．</p>
+<p>使用多重背包的经典优化，对物品进行二进制分组．</p>
+<p>考虑不实际上加入新物品，而是每次遍历一遍物品序列，第 <span class="arithmatex">\(i\)</span> 次将重为 <span class="arithmatex">\(A_i\times 2^{i-1}\)</span> 的物品加进背包．</p>
+<p>但是这个背包容量 <span class="arithmatex">\(M\)</span> 是 <span class="arithmatex">\(10^{18}\)</span> 量级的，<span class="arithmatex">\(\mathcal O\left(NM\log M\right)\)</span> 无法接受．</p>
+<p>注意到在第 <span class="arithmatex">\(i\)</span> 次遍历时，每件物品的重量均可以被 <span class="arithmatex">\(2^{i-1}\)</span> 整除，因此考虑每遍历一次物品序列就将 <span class="arithmatex">\(M\)</span> 减半．</p>
+<p>这样，为了将每个物品都加进去，大概只需要维护 <span class="arithmatex">\(2\left(\sum A_i\right) + \mathcal O\left(1\right)\)</span> 的背包空间．</p>
+<p>时间复杂度 <span class="arithmatex">\(\mathcal O\left(N^2A\log M\right)\)</span>，这里 <span class="arithmatex">\(A\)</span> 为值域．</p>
+<details class="note">
+<summary>Code</summary>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;bits/stdc++.h&gt;</span>
+<span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span>
+
+<span class="k">constexpr</span><span class="w"> </span><span class="kt">uint64_t</span><span class="w"> </span><span class="n">mod</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">998244353</span><span class="p">;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">cin</span><span class="p">.</span><span class="n">tie</span><span class="p">(</span><span class="k">nullptr</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">sync_with_stdio</span><span class="p">(</span><span class="nb">false</span><span class="p">);</span>
+<span class="w">  </span><span class="n">cin</span><span class="p">.</span><span class="n">exceptions</span><span class="p">(</span><span class="n">cin</span><span class="p">.</span><span class="n">failbit</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">cin</span><span class="p">.</span><span class="n">badbit</span><span class="p">);</span>
+
+<span class="w">  </span><span class="kt">size_t</span><span class="w"> </span><span class="n">n</span><span class="p">;</span>
+<span class="w">  </span><span class="kt">uint64_t</span><span class="w"> </span><span class="n">m</span><span class="p">;</span>
+<span class="w">  </span><span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">m</span><span class="p">;</span>
+
+<span class="w">  </span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">uint64_t</span><span class="o">&gt;</span><span class="w"> </span><span class="n">weight</span><span class="p">(</span><span class="n">n</span><span class="p">);</span>
+<span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">size_t</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span>
+<span class="w">    </span><span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">weight</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+
+<span class="w">  </span><span class="kt">uint64_t</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">*</span><span class="n">max_element</span><span class="p">(</span><span class="n">weight</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="w"> </span><span class="n">weight</span><span class="p">.</span><span class="n">end</span><span class="p">());</span>
+<span class="w">  </span><span class="kt">uint64_t</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="n">v</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+<span class="w">  </span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">uint64_t</span><span class="o">&gt;</span><span class="w"> </span><span class="n">F</span><span class="p">(</span><span class="n">size</span><span class="p">);</span>
+<span class="w">  </span><span class="n">F</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(;</span><span class="w"> </span><span class="n">m</span><span class="p">;</span><span class="w"> </span><span class="n">m</span><span class="w"> </span><span class="o">&gt;&gt;=</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">size_t</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">j</span><span class="p">)</span>
+<span class="w">      </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">size_t</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">F</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="n">weight</span><span class="p">[</span><span class="n">j</span><span class="p">];</span><span class="w"> </span><span class="o">--</span><span class="n">k</span><span class="p">)</span>
+<span class="w">        </span><span class="p">(</span><span class="n">F</span><span class="p">[</span><span class="n">k</span><span class="p">]</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">F</span><span class="p">[</span><span class="n">k</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">weight</span><span class="p">[</span><span class="n">j</span><span class="p">]])</span><span class="w"> </span><span class="o">%=</span><span class="w"> </span><span class="n">mod</span><span class="p">;</span>
+<span class="w">    </span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">uint64_t</span><span class="o">&gt;</span><span class="w"> </span><span class="n">G</span><span class="p">(</span><span class="n">F</span><span class="p">.</span><span class="n">size</span><span class="p">());</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">size_t</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">m</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">F</span><span class="p">.</span><span class="n">size</span><span class="p">();</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span>
+<span class="w">      </span><span class="p">(</span><span class="n">G</span><span class="p">[</span><span class="n">j</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">F</span><span class="p">[</span><span class="n">j</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">F</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">F</span><span class="p">[</span><span class="n">j</span><span class="p">])</span><span class="w"> </span><span class="o">%=</span><span class="w"> </span><span class="n">mod</span><span class="p">;</span>
+<span class="w">    </span><span class="n">F</span><span class="p">.</span><span class="n">swap</span><span class="p">(</span><span class="n">G</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="w">  </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">F</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="sc">&#39;\n&#39;</span><span class="p">;</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+</details>
+<h2 id="5-binary-operation-abc-418-g"><em>[5]</em> Binary Operation (ABC 418 G)</h2>
+<blockquote>
+<p>称一个由 <span class="arithmatex">\(\mathtt{0}\)</span> 和 <span class="arithmatex">\(\mathtt{1}\)</span> 构成的字符串 <span class="arithmatex">\(S\)</span> 是好的，当且仅当其可以经过以下任意次操作后得到 <span class="arithmatex">\(\mathtt{1}\)</span>．</p>
+<p>(操作) 选择下标 <span class="arithmatex">\(1\leqslant i\leqslant |S|-1\)</span>，若 <span class="arithmatex">\(\overline{S_{i}S_{i+1}}\)</span> 为：</p>
+<ul>
+<li><span class="arithmatex">\(\mathtt{00}\)</span>，则替换为 <span class="arithmatex">\(A\)</span>；</li>
+<li><span class="arithmatex">\(\mathtt{01}\)</span>，则替换为 <span class="arithmatex">\(B\)</span>；</li>
+<li><span class="arithmatex">\(\mathtt{10}\)</span>，则替换为 <span class="arithmatex">\(C\)</span>；</li>
+<li><span class="arithmatex">\(\mathtt{11}\)</span>，则替换为 <span class="arithmatex">\(D\)</span>．</li>
+</ul>
+<p>这里 <span class="arithmatex">\(A,B,C,D\in\left\{\mathtt{0},\mathtt{1}\right\}\)</span>．</p>
+<p>给定字符串 <span class="arithmatex">\(S\)</span>，求其所有子串中：</p>
+<ul>
+<li>最长的好的子串的长度（若没有，输出 <span class="arithmatex">\(0\)</span>）；</li>
+<li>好的子串的数量；</li>
+</ul>
+<p>对每一种 <span class="arithmatex">\(A,B,C,D\)</span> 的取值给出答案（共 <span class="arithmatex">\(16\)</span> 种）．</p>
+<ul>
+<li><span class="arithmatex">\(1\leqslant|S|\leqslant 2\times 10^{5}\)</span>．</li>
+</ul>
+</blockquote>
+<h3 id="algo-1">Algo 1</h3>
+<p>分类讨论．</p>
+<h4 id="0000">0000</h4>
+<p>显然只有字符串 <span class="arithmatex">\(\mathtt{1}\)</span> 是好的．</p>
+<h4 id="0001">0001</h4>
+<p>显然只有全 <span class="arithmatex">\(\mathtt{1}\)</span> 的串是好的，即形如 <span class="arithmatex">\(\mathtt{11...111}\)</span>．</p>
+<h4 id="0010">0010</h4>
+<p>首先，显然字符串的首位必须为 <span class="arithmatex">\(\mathtt{1}\)</span>；</p>
+<p>其次，若字符串开头的极长全 <span class="arithmatex">\(\mathtt{1}\)</span> 段的长度为 <span class="arithmatex">\(2\)</span>，则去除开头的极长全 <span class="arithmatex">\(\mathtt{1}\)</span> 段后，字符串必须包含 <span class="arithmatex">\(\mathtt{1}\)</span>．</p>
+<p>换句话说，我们只需要形如 <span class="arithmatex">\(\mathtt{1......}\)</span> 的字符串，除了 <span class="arithmatex">\(\mathtt{1100...000}\)</span>．</p>
+<h4 id="0011">0011</h4>
+<p>显然只要字符串的开头为 <span class="arithmatex">\(\mathtt{1}\)</span> 即可，即形如 <span class="arithmatex">\(\mathtt{1......}\)</span>．</p>
+<h4 id="0100">0100</h4>
+<p>将字符串翻转，然后可以应用 <span class="arithmatex">\(\mathtt{0010}\)</span> 一节的结论；</p>
+<p>即，需要形如 <span class="arithmatex">\(\mathtt{......1}\)</span> 的字符串，除了 <span class="arithmatex">\(\mathtt{00...00011}\)</span>．</p>
+<h4 id="0101">0101</h4>
+<p>将字符串翻转，然后应用 <span class="arithmatex">\(\mathtt{0011}\)</span> 一节的结论；</p>
+<p>即，需要形如 <span class="arithmatex">\(\mathtt{......1}\)</span> 的字符串．</p>
+<h4 id="0110">0110</h4>
+<p>显然操作为异或，因此只需要字符串中 <span class="arithmatex">\(\mathtt{1}\)</span> 的数量为奇数即可．</p>
+<h4 id="0111">0111</h4>
+<p>任何含有 <span class="arithmatex">\(\mathtt{1}\)</span> 的字符串满足要求．</p>
+<h4 id="1000">1000</h4>
+<p>通过暴力枚举可以得到一个表：</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    \mathtt{0} &amp;\to \mathtt{0} \\
+    \mathtt{1} &amp;\to \mathtt{1} \\
+    \mathtt{00} &amp;\to \mathtt{1} \\
+    \mathtt{01} &amp;\to \mathtt{0} \\
+    \mathtt{10} &amp;\to \mathtt{0} \\
+    \mathtt{11} &amp;\to \mathtt{0} \\
+    \mathtt{000} &amp;\to \mathtt{0} \\
+    \mathtt{010} &amp;\to \mathtt{1} \\
+    \mathtt{101} &amp;\to \mathtt{0} \\
+    \mathtt{111} &amp;\to \mathtt{0}
+\end{aligned}
+\]</div>
+<p>表中的字符串的最终状态是唯一的，其余未列出的字符串最终可以转移到 <span class="arithmatex">\(\mathtt{0}\)</span> 或 <span class="arithmatex">\(\mathtt{1}\)</span>．</p>
+<p>对于较短的字符串可以暴力枚举证明（例如，<span class="arithmatex">\(7\)</span> 位及以内），而更多位的字符串总可以被分成不短于 <span class="arithmatex">\(4\)</span> 的两段，故可以归纳证明．</p>
+<h4 id="1001">1001</h4>
+<p>注意到 <span class="arithmatex">\(\mathtt{0}\)</span> 的数量的奇偶性不变，因此 <span class="arithmatex">\(\mathtt{0}\)</span> 的数量为偶数的字符串均符合要求．</p>
+<h4 id="1010">1010</h4>
+<p>暴力枚举打表</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    \mathtt{0} &amp;\to \mathtt{0} \\
+    \mathtt{1} &amp;\to \mathtt{1} \\
+    \mathtt{00} &amp;\to \mathtt{1} \\
+    \mathtt{01} &amp;\to \mathtt{0} \\
+    \mathtt{10} &amp;\to \mathtt{1} \\
+    \mathtt{11} &amp;\to \mathtt{0}
+\end{aligned}
+\]</div>
+<p>其余字符串可以转移到 <span class="arithmatex">\(\mathtt{0}\)</span> 或 <span class="arithmatex">\(\mathtt{1}\)</span> 中任何一个．</p>
+<h4 id="1011">1011</h4>
+<p>只有首位为 <span class="arithmatex">\(\mathtt{0}\)</span> 且其余位均为 <span class="arithmatex">\(\mathtt{1}\)</span> 的字符串不符合要求．</p>
+<h4 id="1100">1100</h4>
+<p>暴力打表发现</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    \mathtt{0} &amp;\to \mathtt{0} \\
+    \mathtt{1} &amp;\to \mathtt{1} \\
+    \mathtt{00} &amp;\to \mathtt{1} \\
+    \mathtt{01} &amp;\to \mathtt{1} \\
+    \mathtt{10} &amp;\to \mathtt{0} \\
+    \mathtt{11} &amp;\to \mathtt{0}
+\end{aligned}
+\]</div>
+<p>其余字符串可以转移到 <span class="arithmatex">\(\mathtt{0}\)</span> 或 <span class="arithmatex">\(\mathtt{1}\)</span> 中任何一个．</p>
+<h4 id="1101">1101</h4>
+<p><span class="arithmatex">\(\mathtt{1011}\)</span> 的翻转版</p>
+<p>只有末位为 <span class="arithmatex">\(\mathtt{0}\)</span> 且其余位均为 <span class="arithmatex">\(\mathtt{1}\)</span> 的字符串不符合要求．</p>
+<h4 id="1110">1110</h4>
+<p>暴力打表</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    \mathtt{0} &amp;\to \mathtt{0} \\
+    \mathtt{1} &amp;\to \mathtt{1} \\
+    \mathtt{00} &amp;\to \mathtt{1} \\
+    \mathtt{01} &amp;\to \mathtt{1} \\
+    \mathtt{10} &amp;\to \mathtt{1} \\
+    \mathtt{11} &amp;\to \mathtt{0} \\
+    \mathtt{000} &amp;\to \mathtt{1} \\
+    \mathtt{010} &amp;\to \mathtt{1} \\
+    \mathtt{101} &amp;\to \mathtt{0} \\
+    \mathtt{111} &amp;\to \mathtt{1}
+\end{aligned}
+\]</div>
+<p>其余字符串可以转移到 <span class="arithmatex">\(\mathtt{0}\)</span> 或 <span class="arithmatex">\(\mathtt{1}\)</span> 中任何一个．</p>
+<h4 id="1111">1111</h4>
+<p>显然任意字符串均可以转移到 <span class="arithmatex">\(\mathtt{1}\)</span>．</p>
+<h3 id="algo-2">Algo 2</h3>
+<p>好像可以造自动机，先鸽着．</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../../physics/misc-exercises/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 杂题选做">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                杂题选做
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../shortest-path-algorithms/" class="md-footer__link md-footer__link--next" aria-label="Next: 最短路算法">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                最短路算法
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2025 - 2026 weilycoder
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.footnote.tooltips", "content.tooltips", "header.autohide", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.instant.progress", "navigation.path", "navigation.tabs", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
