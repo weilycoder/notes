@@ -35,7 +35,7 @@ def main():
 
     args = parser.parse_args()
     write_temp_settings(args.url)
-    os.system(f"mkdocs {args.command} -f mkdocs.temp.yml")
+    os.system(f"python -m mkdocs {args.command} -f mkdocs.temp.yml")
 
 
 if __name__ == "__main__":
