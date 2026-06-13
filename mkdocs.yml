@@ -81,6 +81,8 @@ nav:
           - 焦点三角形: math/conic-section/focal-triangle.md
           - 调和点列与极点极线: math/conic-section/harmonic-division-poles-polars.md
           - 杂项: math/conic-section/misc.md
+      - 导数基础:
+          - 极限: math/derivative/limit.md
       - 均值不等式证明（AM-GM）: math/AM-GM-proof.md
       - 等差数列的 k 阶前缀和: math/AP-k-prefix-sum.md
       - 牛顿恒等式: math/newton-identity.md
